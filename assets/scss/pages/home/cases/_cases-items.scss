@@ -1,0 +1,6 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.cases__items {
+  @include cases-items;
+}

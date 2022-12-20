@@ -1,0 +1,36 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.services-logo {
+  display: flex;
+
+  @include logo;
+
+  &__breadcrumbs {
+    display: flex;
+
+    padding-bottom: 75px;
+
+    @include lg {
+      padding-bottom: 20px;
+    }
+
+    &-text {
+      color: $color-white;
+
+      font-size: 38px;
+      font-weight: 400;
+      font-style: normal;
+
+      @include lg {
+        font-size: 19px;
+      }
+    }
+  }
+  &__breadcrumbs-img {
+    @include lg {
+      width: 22px;
+      height: 24px;
+    }
+  }
+}

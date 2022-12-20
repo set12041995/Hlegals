@@ -1,0 +1,130 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.cards-items {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 40px;
+
+  border-radius: 8px;
+  background-color: $color-white;
+
+  gap: 10px;
+  &.-first {
+    @include sm {
+      order: -3;
+    }
+  }
+  &.-second {
+    @include sm {
+      order: -2;
+    }
+  }
+  &.-bg {
+    @include lg {
+      background-color: $color-gray-bg;
+    }
+  }
+  &.-none {
+    @include sm {
+      display: none;
+    }
+  }
+  &__title {
+    padding: 20px;
+
+    color: $color-active;
+
+    font-size: 1.125 * $font-size;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  &__data {
+    padding: 0 20px 20px 20px;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: $color-gray-bg-text;
+
+    font-size: 0.75 * $font-size;
+    font-weight: 700;
+
+    @include xl {
+      padding: 0 10px 10px 10px;
+    }
+    @include sm {
+      padding: 0 10px 20px 20px;
+    }
+  }
+  &__description {
+    margin: 0 20px 20px 20px;
+    padding-top: 16px;
+
+    color: $color-black;
+    border-top: 4px solid $color-gray-bg-separator;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+
+    @include xl {
+      margin: 0 10px 10px 10px;
+    }
+    &.-none {
+      @include sm {
+        display: none;
+      }
+    }
+  }
+  &__button {
+    position: absolute;
+    z-index: 9900;
+    bottom: 40px;
+    left: 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    border-radius: 12px;
+    background: $color-active;
+    box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+
+    @include md {
+      left: 34%;
+    }
+    @include sm {
+      position: static;
+
+      max-width: 250px;
+
+      margin-inline: auto;
+    }
+  }
+  &__link {
+    padding: 16px 78.5px 17px 78.5px;
+
+    color: $color-white;
+  }
+  &__picture {
+    order: -1;
+
+    padding: 0;
+    &.-none {
+      @include sm {
+        display: none;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+}

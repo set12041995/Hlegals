@@ -1,0 +1,36 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $font-primary;
+  font-size: $font-size;
+}
+
+
+
+a {
+  transition: 0.5s;
+  text-decoration: none;
+
+  color: $color-active;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.-btn {
+  transition: 0.5s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}

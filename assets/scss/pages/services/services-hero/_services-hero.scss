@@ -1,0 +1,9 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.services-hero {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+
+  @include services;
+}

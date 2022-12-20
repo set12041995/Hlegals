@@ -1,0 +1,6 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.clients {
+  @include clients;
+}

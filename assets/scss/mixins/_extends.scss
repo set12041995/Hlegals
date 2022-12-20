@@ -1,0 +1,14 @@
+@use "../presets" as *;
+
+
+%container {
+  width: min(100% - 1.5 * $gap-xl, $container-width);
+
+  margin-inline: auto;
+}
+%text-liner-gradient {
+  background: linear-gradient($text-gradient1);
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}

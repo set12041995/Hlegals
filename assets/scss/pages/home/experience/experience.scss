@@ -1,0 +1,17 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.experience {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  background-color: $color-primary;
+
+  &__title {
+    @include visually-hidden;
+  }
+
+  &__container {
+    @extend %container;
+  }
+}

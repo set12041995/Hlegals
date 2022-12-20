@@ -1,0 +1,169 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+$size: 16px;
+
+.slider {
+  display: flex;
+
+  @include md-min {
+    gap: 80px;
+  }
+  @include md {
+    flex-direction: column;
+  }
+
+  &__headers {
+    position: relative;
+
+    display: flex;
+    flex-basis: 0;
+    flex-direction: column;
+    flex-grow: 2;
+
+    gap: $gap;
+    @include md-min {
+      align-items: flex-end;
+      &::after {
+        position: absolute;
+        right: -42px;
+
+        width: 4px;
+        height: 100%;
+
+        content: "";
+
+        background-color: $color-gray-bg-separator;
+      }
+    }
+  }
+  &__header {
+    position: relative;
+
+    user-select: none;
+
+    color: $color-gray-bg-text;
+
+    @include lg-min {
+      text-align: right;
+
+      font-size: 2.625 * $font-size;
+    }
+    @include lg-md {
+      text-align: right;
+
+      font-size: 2 * $font-size;
+    }
+    @include md {
+      display: none;
+
+      width: min-content;
+      margin-bottom: $gap-sm;
+
+      white-space: nowrap;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      font-size: 0.875 * $font-size;
+      line-height: 17px;
+
+      @include text-shorten;
+    }
+
+    &.-active {
+      display: block;
+
+      @extend %text-liner-gradient;
+      @include md-min {
+        &::after {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          right: -42px;
+
+          width: 4px;
+          height: 100%;
+
+          content: "";
+
+          background-color: $color-accent;
+        }
+      }
+    }
+  }
+  &__notes {
+    display: flex;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 3;
+
+    margin-bottom: 10px;
+
+    color: $color-white;
+  }
+  &__note {
+    position: absolute;
+    z-index: -100;
+
+    max-width: 600px;
+
+    opacity: 0;
+    &.-active {
+      position: static;
+      z-index: inherit;
+
+      opacity: 1;
+    }
+  }
+  &__title {
+    line-height: 38px;
+
+    @include lg-min {
+      font-size: 2 * $font-size;
+    }
+    @include lg-md {
+      margin-bottom: $gap;
+
+      font-size: 1.75 * $font-size;
+    }
+    @include md {
+      margin-bottom: $gap-md;
+
+      font-size: 1.375 * $font-size;
+    }
+  }
+  &__description {
+    font-size: 1.3125 * $font-size;
+    line-height: 30px;
+
+    @include md-min {
+      font-size: 1.3125 * $font-size;
+    }
+    @include md {
+      margin-bottom: 20px;
+
+      font-size: 1.125 * $font-size;
+    }
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+
+    gap: 14px;
+    @include md-min {
+      display: none;
+    }
+  }
+  &__indicator {
+    width: $size;
+    height: $size;
+
+    opacity: 0.2;
+    border-radius: $size *0.5;
+    background-color: $color-active;
+
+    &.-active {
+      opacity: 1;
+    }
+  }
+}

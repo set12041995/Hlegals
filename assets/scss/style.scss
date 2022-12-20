@@ -1,0 +1,16 @@
+@use "../../node_modules/normalize.css/normalize";
+
+@use "common";
+@use "pages/home/header";
+@use "pages/home/experience";
+@use "pages/home/service";
+@use "pages/home/team";
+@use "pages/home/cases";
+@use "pages/home/clients";
+@use "pages/home/cards";
+@use "pages/home/footer";
+@use "pages/services/header-services";
+@use "pages/services/services-hero";
+@use "pages/services/services-cases";
+@use "pages/services/services-clients";
+@use "pages/services/services-footer";

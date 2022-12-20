@@ -1,0 +1,21 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.services-footer {
+  @include footer;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    @extend %container;
+    @include lg {
+      align-items: center;
+      flex-direction: column;
+
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.services-menu {
+  padding-bottom: 75px;
+  @include md  {
+    padding-bottom: 0;
+  }
+
+  @include menu-dark;
+}
